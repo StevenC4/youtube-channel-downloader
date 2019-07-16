@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  yt-downloader-client:
+    container_name: ytDownloaderClient
+    build: ./
+    image: yt-downloader-client
+    ports:
+      - 3000:4000
