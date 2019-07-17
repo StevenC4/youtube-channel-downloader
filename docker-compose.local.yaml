@@ -5,4 +5,4 @@ services:
     build: ./
     image: yt-downloader-client
     ports:
-      - 3000:4000
+      - 4000:3000

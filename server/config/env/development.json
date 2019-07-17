@@ -1,0 +1,22 @@
+{
+    "cors": {
+        "origin": ["http://localhost:3000"]
+    },
+    "csrfTokenCookie": {
+        "secure": false
+    },
+    "express": {
+        "trustProxy": false
+    },
+    "session": {
+        "name": "yt-channel-downloader-session-dev",
+        "cookie": {
+            "domain": "localhost",
+            "secure": false
+        },
+        "secret": "testsessionsecret"
+    },
+    "static": {
+        "path": "../../client/build"
+    }
+}
