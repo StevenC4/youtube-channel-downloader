@@ -6,3 +6,11 @@ services:
     image: yt-downloader-client
     ports:
       - 4000:3000
+    depends_on:
+      - yt-downloader-daemon
+  yt-downloader-daemon:
+    container_name: ytDownloaderDaemon
+    build: ./daemon
+    image: yt-downloader-daemon
+    volumes:
+      - ./data:/data
