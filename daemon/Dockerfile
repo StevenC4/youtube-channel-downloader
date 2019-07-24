@@ -14,12 +14,14 @@ RUN go build -v -o yt-downloader-daemon
 FROM python:3.7.4-alpine3.10 AS release
 
 WORKDIR /
-COPY scripts/* /usr/local/bin/
+VOLUME /data
+ENV DATABASE_NAME yt-downloader-database.db
+COPY scripts/*.sh /usr/local/bin/
+COPY scripts/*/*.sh /usr/local/bin/
+COPY scripts/sql /sql
 COPY --from=golang-build /go/src/app/yt-downloader-daemon /usr/local/bin/
 COPY --from=download-yt /usr/local/bin/youtube-dl /usr/local/bin/
 RUN chmod -R +x /usr/local/bin
 RUN apk update && apk add sqlite
-RUN mkdir /data
-VOLUME /data
 
 CMD ["run.sh"]
