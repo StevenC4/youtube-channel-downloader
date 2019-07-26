@@ -77,8 +77,8 @@ function ChannelList({match}) {
           {channelIds.map(channelId =>
             <li key={channelId} className='channelInfoBox'>
               <NavLink to={`${match.url}/${channelId}`}>
-                <div>{channels[channelId].name}</div>
-                <div>{moment.unix(channels[channelId].published).format('LLL')}</div>
+                <div className='channelName'>{channels[channelId].name}</div>
+                <div className='channelPublished'>{moment.unix(channels[channelId].published).format('LLL')}</div>
               </NavLink>
             </li>
           )}

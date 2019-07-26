@@ -83,3 +83,12 @@
 .App nav ul li.channelInfoBox:hover a {
   color: #555;
 }
+
+.App nav ul li.channelInfoBox .channelName {
+  font-size: calc(16px + 2vmin);
+  font-weight: bold;
+}
+
+.App nav ul li.channelInfoBox .channelName {
+  font-size: calc(10px + 2vmin);
+}
