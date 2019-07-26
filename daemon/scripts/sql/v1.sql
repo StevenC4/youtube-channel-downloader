@@ -14,7 +14,8 @@ INSERT INTO version (version) VALUES (1);
 CREATE TABLE IF NOT EXISTS
 channels(
 	ytChannelId VARCHAR(30) PRIMARY KEY,
-	name TEXT NOT NULL
+	name TEXT NOT NULL,
+	published INTEGER NOT NULL
 ) WITHOUT ROWID;
 
 -- Create a "videos" table

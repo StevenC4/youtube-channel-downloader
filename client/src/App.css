@@ -59,3 +59,27 @@
 .App .navBar nav ul li a:hover {
   background-color: #3f4550;
 }
+
+.App nav.channels {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.App nav ul li.channelInfoBox a {
+  padding: 16px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.App nav ul li.channelInfoBox a {
+  color: #777;
+}
+
+.App nav ul li.channelInfoBox:hover {
+  background-color: #eee;
+}
+
+.App nav ul li.channelInfoBox:hover a {
+  color: #555;
+}

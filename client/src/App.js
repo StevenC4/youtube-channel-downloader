@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, NavLink} from 'react-router-dom';
+import moment from 'moment';
 
 function App() {
   return (
@@ -37,7 +38,6 @@ function Index() {
 function Channels({match}) {
   return (
     <div>
-      <h2>Channels page</h2>
       <Route path={`${match.path}/:id`} component={ChannelViewer} />
       <Route path={match.path} exact component={ChannelList} />
     </div>
@@ -46,21 +46,40 @@ function Channels({match}) {
 
 const channelIds = [1, 3, 21, 13];
 const channels = {
-  1: {ytChannelId: 1, name: 'Blender Guru'},
-  3: {ytChannelId: 3, name: `Jelle's Marble Runs`},
-  13: {ytChannelId: 13, name: 'Primitive Technology'},
-  21: {ytChannelId: 21, name: 'Zeltik'}
+  1: {
+    ytChannelId: 1,
+    name: 'Blender Guru',
+    published: 1564114057
+  },
+  3: {
+    ytChannelId: 3,
+    name: `Jelle's Marble Runs`,
+    published: 1564114057
+  },
+  13: {
+    ytChannelId: 13,
+    name: 'Primitive Technology',
+    published: 1564114057
+  },
+  21: {
+    ytChannelId: 21,
+    name: 'Zeltik',
+    published: 1564114057
+  }
 };
 
 function ChannelList({match}) {
   return (
     <div>
-      <h3>List of channels</h3>
-      <nav>
+      <h3>Channels:</h3>
+      <nav className='channels'>
         <ul>
           {channelIds.map(channelId =>
-            <li key={channelId}>
-              <NavLink to={`${match.url}/${channelId}`}>{channels[channelId].name}</NavLink>
+            <li key={channelId} className='channelInfoBox'>
+              <NavLink to={`${match.url}/${channelId}`}>
+                <div>{channels[channelId].name}</div>
+                <div>{moment.unix(channels[channelId].published).format('LLL')}</div>
+              </NavLink>
             </li>
           )}
         </ul>
