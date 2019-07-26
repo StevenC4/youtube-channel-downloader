@@ -13,40 +13,49 @@
   color: white;
 }
 
-.App nav {
+.App nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App nav ul li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.App .navBar {
   background-color: #282c34;
   color: #ffffff;
 }
 
-.App nav ul {
-  list-style: none;
+.App .navBar nav ul {
   margin: 0 auto;
   padding: 16px 0;
   display: flex;
   width: fit-content;
 }
 
-.App nav ul li {
+.App .navBar nav ul li {
   display: flex;
 }
 
-.App nav ul li a {
-  text-decoration: none;
+.App .navBar nav ul li a {
   color: #ffffff;
   font-weight: bold;
   padding: 24px 16px;
-  cursor: pointer;
   border: 1px solid transparent;
 }
 
-.App nav ul li a.activeLink {
+.App .navBar ul li a {
+  background-color: #282c34;
+  color: #ffffff;
+}
+
+.App .navBar nav ul li a.activeLink {
   border: 1px solid white;
 }
 
-.App nav ul li a:hover {
+.App .navBar nav ul li a:hover {
   background-color: #3f4550;
-}
-
-.App-link {
-  color: #61dafb;
 }
