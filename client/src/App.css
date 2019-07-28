@@ -27,6 +27,7 @@
 .App .navBar {
   background-color: #282c34;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
 .App .navBar nav ul {
@@ -65,11 +66,31 @@
   margin: 0 auto;
 }
 
+.App nav.channels .addChannelButton {
+  padding: 16px;
+  margin: 16px 0;
+  background-color: green;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.App nav.channels .addChannelButton:hover {
+  background-color: darkgreen;
+}
+
 .App nav ul li.channelInfoBox a {
+  margin: 8px 0 0 0;
   padding: 16px;
   border: 1px solid transparent;
   display: flex;
   flex-direction: column;
+  background-color: #f1f1f1;
+}
+
+.App nav ul li.channelInfoBox:first-of-type a {
+  margin: 0;
 }
 
 .App nav ul li.channelInfoBox a {
@@ -77,18 +98,15 @@
 }
 
 .App nav ul li.channelInfoBox:hover {
-  background-color: #eee;
+
 }
 
 .App nav ul li.channelInfoBox:hover a {
+  background-color: #ddd;
   color: #555;
 }
 
 .App nav ul li.channelInfoBox .channelName {
   font-size: calc(16px + 2vmin);
   font-weight: bold;
-}
-
-.App nav ul li.channelInfoBox .channelName {
-  font-size: calc(10px + 2vmin);
 }
