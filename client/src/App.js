@@ -58,21 +58,34 @@ const videos = {
 
 let modalOpen = false;
 
+const eldarChannelId = 'UCFRZRx9ykfwFsVh6LF-kJ6A';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       channels,
       videos,
-      modalOpen
+      modal: {
+        open: modalOpen,
+        contentLabel: '',
+      }
     };
-    this.openChannelAdder = this.openChannelAdder.bind(this);
+    this.handleModalRequestClose = this.handleModalRequestClose.bind(this);
+    this.setModalOpenState = this.setModalOpenState.bind(this);
   }
 
-  openChannelAdder() {
+  setModalOpenState(open, contentLabel) {
     this.setState({
-      modalOpen: true
+      modal: {
+        open,
+        contentLabel
+      }
     });
+  }
+
+  handleModalRequestClose() {
+    this.setModalOpenState(false, '');
   }
 
   render() {
@@ -92,12 +105,19 @@ class App extends Component {
             </nav>
           </div>
           <Route path='/' exact component={Index}/>
-          <Route path='/channels' render={renderProps => <Channels {...renderProps} openChannelAdder={this.openChannelAdder} />}/>
+          <Route path='/channels' render={renderProps =>
+            <Channels
+              {...renderProps}
+              channels={this.state.channels}
+              videos={this.state.videos}
+              setModalOpenState={this.setModalOpenState}
+            />
+          }/>
         </BrowserRouter>
         <Modal
-            isOpen={this.state.modalOpen}
-            onAfterOpen={() => console.log('On after opten')}
-            onRequestClose={() => console.log('Closing modal')}
+            isOpen={this.state.modal.open}
+            onRequestClose={this.handleModalRequestClose}
+            contentLabel={this.state.modal.contentLabel}
             style={{
               content : {
                 top                   : '50%',
@@ -105,11 +125,13 @@ class App extends Component {
                 right                 : 'auto',
                 bottom                : 'auto',
                 marginRight           : '-50%',
-                transform             : 'translate(-50%, -50%)'
+                transform             : 'translate(-50%, -50%)',
+                padding               : 0
               }
             }}
-            contentLabel="Add a Channel"
-          ></Modal>
+          >
+            <ChannelDownloader channels={this.state.channels} />
+          </Modal>
       </div>
     );
   }
@@ -127,8 +149,23 @@ function Index() {
 function Channels(props) {
   return (
     <div>
-      <Route path={`${props.match.path}/:id`} component={ChannelViewer} />
-      <Route path={props.match.path} exact render={renderProps => <ChannelList {...renderProps} openChannelAdder={props.openChannelAdder} />} />
+      <Route path={`${props.match.path}/:id`} render={
+        renderProps =>
+          <ChannelViewer
+            {...renderProps}
+            channel={props.channels.byId[renderProps.match.params.id]}
+            videos={props.videos}
+          />
+        }
+      />
+      <Route path={props.match.path} exact render={
+        renderProps =>
+          <ChannelList
+            {...renderProps}
+            {...props}
+          />
+        }
+      />
     </div>
     );
 }
@@ -140,7 +177,7 @@ class ChannelList extends Component {
   }
 
   handleClick(e) {
-    this.props.openChannelAdder();
+    this.props.setModalOpenState(true, 'Select a channel to download');
   }
 
   render() {
@@ -152,8 +189,8 @@ class ChannelList extends Component {
             {channels.ids.map(channelId =>
               <li key={channelId} className='channelInfoBox'>
                 <NavLink to={`${this.props.match.url}/${channelId}`}>
-                  <div className='channelName'>{channels.byId[channelId].name}</div>
-                  <div className='channelPublished'>{moment.unix(channels.byId[channelId].published).format('LLL')}</div>
+                  <div className='channelName'>{this.props.channels.byId[channelId].name}</div>
+                  <div className='channelPublished'>{moment.unix(this.props.channels.byId[channelId].published).format('LLL')}</div>
                 </NavLink>
               </li>
             )}
@@ -164,34 +201,114 @@ class ChannelList extends Component {
   }
 }
 
-function ChannelViewer({match}) {
-  const channelId = match.params.id;
-  const channel = channels.byId[channelId];
+function ChannelViewer(props) {
   return (
     <div>
-      <h2>{channel.name}</h2>
+      <h2>{props.channel.name}</h2>
       <h3>Video list</h3>
-      {channel.videos.map(videoId => <Video key={videoId} videoId={videoId}/>)}
+      {props.channel.videos.map(videoId =>
+        <Video
+          key={videoId}
+          video={props.videos.byId[videoId]}
+        />)
+      }
     </div>
   );
 }
 
-function Video({videoId}) {
-  const video = videos.byId[videoId];
+function Video(props) {
   return (
     <div>
-      <p>{video.name}</p>
-      <p className='videoPublished'>{moment.unix(video.published).format('LLL')}</p>
+      <p>{props.video.name}</p>
+      <p className='videoPublished'>{moment.unix(props.video.published).format('LLL')}</p>
       <iframe
-        id={`ytplayer-${videoId}`}
+        id={`ytplayer-${props.videoId}`}
         type='text/html'
         width='320'
         height='180'
-        title={video.name}
-        src={`https://www.youtube.com/embed/${videoId}?autoplay=0&origin=http://localhost`}
+        title={props.video.name}
+        src={`https://www.youtube.com/embed/${props.video.id}?autoplay=0&origin=http://localhost`}
         frameBorder='0'></iframe>
     </div>
   );
+}
+
+class ChannelDownloader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      channel: null
+    };
+    this.findYoutubeChannel = this.findYoutubeChannel.bind(this);
+  }
+
+  findYoutubeChannel(channelId) {
+    console.log(channelId);
+  }
+
+  render() {
+    return (
+      <div className='channelDownloaderModalContents'>
+        <h2>Download a channel</h2>
+        <hr/>
+        {!this.state.channel &&
+          <ChannelDownloadSelector
+            channels={this.props.channels}
+            findYoutubeChannel={this.findYoutubeChannel}
+          />
+        }
+        {this.state.channel && <p>Channel selected!</p>}
+      </div>
+    );
+  }
+}
+
+class ChannelDownloadSelector extends Component {
+  constructor(props) {
+    // TODO: when the component loads, focus on the imput immediately
+    super(props);
+    this.state = {
+      channelId: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      channelId: e.target.value
+    });
+  }
+
+  handleClick(e) {
+    this.props.findYoutubeChannel(this.state.channelId);
+  }
+
+  handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      this.props.findYoutubeChannel(this.state.channelId);
+    }
+  }
+
+  render() {
+    return (
+      <div className='channelDownloadSelector'>
+          <label htmlFor='channel-download-selector-input'>Enter the channel Id:</label>
+          <input
+            id='channel-download-selector-input'
+            className='channelDownloadSelectorInput'
+            value={this.state.channelId}
+            onChange={this.handleChange}
+            onKeyDown={this.handleKeyDown}
+          />
+          <div
+            className='channelDownloadSelectorButton'
+            onClick={this.handleClick}
+          >Search</div>
+      </div>
+    );
+  }
 }
 
 export default App;

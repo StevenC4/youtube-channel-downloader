@@ -97,10 +97,6 @@
   color: #777;
 }
 
-.App nav ul li.channelInfoBox:hover {
-
-}
-
 .App nav ul li.channelInfoBox:hover a {
   background-color: #ddd;
   color: #555;
@@ -109,4 +105,42 @@
 .App nav ul li.channelInfoBox .channelName {
   font-size: calc(16px + 2vmin);
   font-weight: bold;
+}
+
+/* Channel Downloader Modal Contents */
+
+.channelDownloaderModalContents > div, .channelDownloaderModalContents > h2 {
+  padding: 16px;
+  margin: 0;
+}
+
+.channelDownloaderModalContents > div {
+  padding: 32px;
+}
+
+.channelDownloaderModalContents hr {
+  margin: 0;
+}
+
+.channelDownloaderModalContents .channelDownloadSelector {
+  display: flex;
+  align-items: center;
+}
+
+.channelDownloaderModalContents div.channelDownloadSelector .channelDownloadSelectorInput {
+  margin: 0 8px;
+  padding: 4px;
+}
+
+.channelDownloaderModalContents div.channelDownloadSelector .channelDownloadSelectorButton {
+  display: inline-block;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.channelDownloaderModalContents div.channelDownloadSelector .channelDownloadSelectorButton:hover {
+  background-color: darkgreen;
 }
