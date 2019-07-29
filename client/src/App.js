@@ -242,8 +242,9 @@ class ChannelDownloader extends Component {
     this.findYoutubeChannel = this.findYoutubeChannel.bind(this);
   }
 
-  findYoutubeChannel(channelId) {
-    console.log(channelId);
+  async findYoutubeChannel(channelId) {
+    const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`); // TODO: replace this with a proxied API call to the YouTube data api 3
+    console.log(response);
   }
 
   render() {
