@@ -9,6 +9,33 @@ const config = convict({
 		format: String,
 		default: pkg.name,
 	},
+	contentSecurityPolicyDomains: {
+		doc: 'An array of strings representing domains included in the content security policy header',
+		format: Array,
+		default: ''
+	},
+	cors: {
+		origin: {
+			doc: 'An array of allowed origins',
+			format: Array,
+			default: []
+		},
+		methods: {
+			doc: 'An array of allowed methods',
+			format: Array,
+			default: ['GET']
+		},
+		allowedHeaders: {
+			doc: 'An array of allowed headers',
+			format: Array,
+			default: ['Content-Type']
+		},
+		credentials: {
+			doc: 'Configures the Access-Control-Allow_Credentials CORS header',
+			format: Boolean,
+			default: true
+		}
+	},
 	csrfTokenCookie: {
 		secure: {
 			doc: 'Whether the CSRF token cookie is secure',
@@ -36,12 +63,17 @@ const config = convict({
 			default: true,
 		}
 	},
-	port: {
-		doc: 'The port to bind the app to.',
-		format: 'port',
-		default: pkg.config.port,
-		arg: 'port',
-		env: 'PORT'
+	youtube: {
+		dataApi: {
+			v3: {
+				token: {
+					doc: 'Token for the youtube data API',
+					format: String,
+					default: '',
+					env: 'YOUTUBE_V3_DATA_API_TOKEN'
+				}
+			},
+		}
 	},
 	log: {
 		app: {
@@ -69,32 +101,12 @@ const config = convict({
 			}
 		}
 	},
-	contentSecurityPolicyDomains: {
-		doc: 'An array of strings representing domains included in the content security policy header',
-		format: Array,
-		default: ''
-	},
-	cors: {
-		origin: {
-			doc: 'An array of allowed origins',
-			format: Array,
-			default: []
-		},
-		methods: {
-			doc: 'An array of allowed methods',
-			format: Array,
-			default: ['GET']
-		},
-		allowedHeaders: {
-			doc: 'An array of allowed headers',
-			format: Array,
-			default: ['Content-Type']
-		},
-		credentials: {
-			doc: 'Configures the Access-Control-Allow_Credentials CORS header',
-			format: 'Boolean',
-			default: true
-		}
+	port: {
+		doc: 'The port to bind the app to.',
+		format: 'port',
+		default: pkg.config.port,
+		arg: 'port',
+		env: 'PORT'
 	},
 	session: {
 		name: {
@@ -104,12 +116,12 @@ const config = convict({
 		},
 		resave: {
 			doc: 'Forces the session to be saved back to the session store regardless of if it was modified',
-			format: 'Boolean',
+			format: Boolean,
 			default: false
 		},
 		saveUninitialized: {
 			doc: 'Forces uninitialized sessions to be saved to the store',
-			format: 'Boolean',
+			format: Boolean,
 			default: true
 		},
 		cookie: {
@@ -132,12 +144,12 @@ const config = convict({
 			},
 			secure: {
 				doc: 'Specifies the boolean value for the Secure Set-Cookie attribute',
-				format: 'Boolean',
+				format: Boolean,
 				default: true
 			},
 			httpOnly: {
 				doc: 'Specifies the boolean value for the HttpOnly Set-Cookie attribute',
-				format: 'Boolean',
+				format: Boolean,
 				default: true
 			}
 		},
@@ -149,7 +161,7 @@ const config = convict({
 			sensitive: true
 		}
 	},
-	inMemorySessionConfig: {
+	sessionConfig: {
 		expires: {
 			doc: 'The expiration time of the in-memory session',
 			format: 'int',

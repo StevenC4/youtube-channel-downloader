@@ -10,6 +10,7 @@ const path = require('path');
 // const routes = require('./routes');
 // const authRoutes = require('./routes/auth');
 // const uiRoutes = require('./routes/ui');
+const apiRoutes = require('./routes/api');
 const config = require('../config');
 const csurf = require('csurf');
 const cookieParser = require('cookie-parser');
@@ -33,5 +34,7 @@ app.set('trust proxy', config.get('express.trustProxy'));
 // app.use(csurf());
 
 app.use('/', express.static(path.join(config.get('env') === 'development' ? __dirname : '', config.get('static.path'))));
+
+app.use('/api', apiRoutes);
 
 module.exports = app;
