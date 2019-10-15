@@ -1,0 +1,13 @@
+APIs to use:
+
+* Search for user / channel
+  * q param
+  * type = channel
+
+* Search for playlist
+  * q param
+  * type = playlist
+
+* Search for video
+  * q param
+  * type = video
