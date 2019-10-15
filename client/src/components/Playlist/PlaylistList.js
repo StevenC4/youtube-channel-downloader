@@ -7,19 +7,21 @@ const PlaylistList = props => {
 
 	return (
 		<div>
-			<nav className='channels'>
-				<div className='addChannelButton' onClick={handleClick}>+ Add Playlist</div>
-				<ul>
+			<nav className='tile-container'>
+				<div className='utilities'>
+					<div className='addButton' onClick={handleClick}>+ Add Playlist</div>
+				</div>
+				<div className='tiles'>
 					{props.playlists.ids.map(playlistId =>
-						<li key={playlistId} className='channelInfoBox'>
+						<div key={playlistId} className='tile'>
 							<NavLink to={`${props.match.url}/${playlistId}`}>
-								<div className='channelName'>{props.playlists.byId[playlistId].title}</div>
+								<div className='title'>{props.playlists.byId[playlistId].title}</div>
 								<div className='channelPublished'>{props.playlists.byId[playlistId].videoIds.length} video{props.playlists.byId[playlistId].videoIds.length === 1 ? '' : 's'}</div>
 								<div className='channelPublished'>{moment(props.playlists.byId[playlistId].published).format('LLL')}</div>
 							</NavLink>
-						</li>
+						</div>
 					)}
-				</ul>
+				</div>
 			</nav>
 		</div>
 	);

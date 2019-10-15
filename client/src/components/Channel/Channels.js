@@ -5,6 +5,7 @@ import ChannelViewer from 'components/Channel/ChannelViewer';
 import Playlists from '../Playlist/Playlists';
 
 const Channels = props => {
+  
   return (
     <div>
       <Route path={`${props.match.path}/:channelId`} exact render={

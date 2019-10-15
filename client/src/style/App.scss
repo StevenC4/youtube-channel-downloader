@@ -1,60 +1,79 @@
 .App {
   text-align: center;
 
+  a {
+    text-decoration: none;
+  }
+
   nav {
-    &.channels {
-      width: fit-content;
+    &.tile-container {
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      .addChannelButton {
-        padding: 16px;
-        margin: 16px 0;
-        background-color: green;
-        border-radius: 4px;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
+      .utilities {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
 
-        &:hover {
-          background-color: darkgreen;
+        label {
+          font-weight: bold;
+          input.filter {
+            margin-left: 8px;
+            height: 24px;
+            width: 178px;
+          }
+        }
+
+        .addButton {
+          padding: 16px;
+          margin: 16px 0;
+          background-color: green;
+          border-radius: 4px;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          width: fit-content;
+  
+          &:hover {
+            background-color: darkgreen;
+          }
         }
       }
-    }
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        &.channelInfoBox a {
-          margin: 8px 0 0 0;
-          padding: 16px;
-          border: 1px solid transparent;
-          display: flex;
-          flex-direction: column;
+      div.tiles {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+  
+        div.tile {
           background-color: #f1f1f1;
           color: #777;
-        }
+          margin: 8px;
+          border: 1px solid transparent;
+          width: fit-content;
 
-        &.channelInfoBox:hover a {
-          background-color: #ddd;
-          color: #555;
-        }
+          &:hover {
+            background-color: #ddd;
+            color: #555;
+          }
 
-        &.channelInfoBox:first-of-type a {
-          margin: 0;
+          a {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            color: inherit;
+            cursor: pointer;
+          }
         }
-
-        a {
-          text-decoration: none;
-          cursor: pointer;
+        
+        .title {
+          font-size: calc(10px + 2vmin);
+          font-weight: bold;
         }
-      }
-      
-      .App nav ul li.channelInfoBox .channelName {
-        font-size: calc(16px + 2vmin);
-        font-weight: bold;
       }
     }
   }

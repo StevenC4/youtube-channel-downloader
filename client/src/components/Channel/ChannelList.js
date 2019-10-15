@@ -5,21 +5,28 @@ import { NavLink } from 'react-router-dom';
 const ChannelList = props => {
 	const handleClick = _e => props.setModalOpenState(true, 'Select a channel to download');
 
+	// TODO: Sort channels by alphabetical order
 	return (
 		<div>
-			<nav className='channels'>
-				<div className='addChannelButton' onClick={handleClick}>+ Add Channel</div>
-				<ul>
+			<nav className='tile-container'>
+				<div className='utilities'>
+					<label>
+						Filter:
+						<input className='filter' type='text'></input>
+					</label>
+					<div className='addButton' onClick={handleClick}>+ Add Channel</div>
+				</div>
+				<div className='tiles'> 
 					{props.channels.ids.map(channelId =>
-						<li key={channelId} className='channelInfoBox'>
+						<div key={channelId} className='tile'>
 							<NavLink to={`${props.match.url}/${channelId}`}>
-								<div className='channelName'>{props.channels.byId[channelId].name}</div>
+								<div className='title'>{props.channels.byId[channelId].name}</div>
 								<div className='channelPublished'>{props.channels.byId[channelId].playlistIds.length} playlist{props.channels.byId[channelId].playlistIds.length === 1 ? '' : 's'}</div>
 								<div className='channelPublished'>{moment.unix(props.channels.byId[channelId].published).format('LLL')}</div>
 							</NavLink>
-						</li>
+						</div>
 					)}
-				</ul>
+				</div>
 			</nav>
 		</div>
 	);
