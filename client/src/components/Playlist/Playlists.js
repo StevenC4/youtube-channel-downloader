@@ -6,11 +6,11 @@ import PlaylistViewer from 'components/Playlist/PlaylistViewer';
 const Playlists = props => {
   return (
     <div>
-      <Route path={`${props.match.path}/:id`} render={
+      <Route path={`${props.match.path}/:playlistId`} render={
         renderProps =>
           <PlaylistViewer
             {...renderProps}
-            playlist={props.playlists.byId[renderProps.match.params.id]}
+            playlist={props.playlists.byId[renderProps.match.params.playlistId]}
             videos={props.videos}
           />
       }
