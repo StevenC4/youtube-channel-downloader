@@ -4,6 +4,7 @@ import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
 import Homepage from 'components/Homepage';
 import ChannelDownloader from 'components/Channel/ChannelDownloader';
+import Catalog from 'components/Catalog/Catalog';
 import Channels from 'components/Channel/Channels';
 import Playlists from 'components/Playlist/Playlists';
 
@@ -148,15 +149,202 @@ const videos = {
       thumbnail: 'https://i2.ytimg.com/vi/-h0h1CydP6o/hqdefault.jpg',
       description: `What is Breath of the Wild's Forgotten Temple? ►Follow me on Twitter! http://www.twitter.com/Zeltik or Instagram: @zeltikinsta ► Music in this video: Nintendo ZREO Ruven Wegner, "Water Temple" ► Discord Link: https://discord.gg/zeltik ► Patreon: https://www.patreon.com/zeltik ► Intro music by: http://bit.ly/RuvenWegner Thank you to my amazing Patreon supporters: Andrew Lindberg, Scott Crim, Nick Goodman, Charley Sjerps, Torrey Easter, Malina Workman, Cameron Bryant, Kristian Skjellet, Liam Timoney, Tito Saenz, Joshua Bock, Lux Pro, desmond paul james o'neill, Tram Tran, Rusty Caufield, Frankie Nolan, Andrew D Wood, Alex Polanoc, Lina Derevyanko, Daniel Newton, Luke Voges, Triggerpigking, Bretton Weber #Zelda #BreathoftheWild #LegendofZelda`
     },
-    '0d3FHa4YTsE': {
-      id: '0d3FHa4YTsE',
-      name: 'The DARK Truth about Malice - Breath of the Wild Sequel Theory (ft. NintendoBlackCrisis)',
+    'jUoDe7MhLBA': {
+      id: 'jUoDe7MhLBA',
+      name: 'Test video name',
       published: 1561921200,
-      thumbnail: 'https://i1.ytimg.com/vi/0d3FHa4YTsE/hqdefault.jpg',
-      description: `What IS Malice? ► PART TWO: https://www.youtube.com/watch?v=WYQzY9DmHlE ►Follow me on Twitter! http://www.twitter.com/Zeltik or Instagram: @zeltikinsta ► Music in this video: Nintendo ZREO Inner Devil, Siren of Chernobyl: https://soundcloud.com/the-inner-devil ► Discord Link: https://discord.gg/zeltik ► Patreon: https://www.patreon.com/zeltik ► Intro music by: http://bit.ly/RuvenWegner Thank you to my amazing Patreon supporters: Andrew Lindberg, Scott Crim, Nick Goodman, Charley Sjerps, Torrey Easter, Malina Workman, Cameron Bryant, Kristian Skjellet, Liam Timoney, Tito Saenz, Joshua Bock, Lux Pro, desmond paul james o'neill, Tram Tran, Rusty Caufield, Frankie Nolan, Andrew D Wood, Alex Polanoc, Lina Derevyanko, Daniel Newton, Luke Voges, Triggerpigking, Bretton Weber #Zelda #BreathoftheWild2 #LegendofZelda`
-    }
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    '72phpntWYlU': {
+      id: '72phpntWYlU',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'toC9UqVnz8g': {
+      id: 'toC9UqVnz8g',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    '4Ul1dme6f0A': {
+      id: '4Ul1dme6f0A',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'nT1NjeBsZHs': {
+      id: 'nT1NjeBsZHs',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'nABNYwsDEqw': {
+      id: 'nABNYwsDEqw',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'dx5wF66YwX8': {
+      id: 'dx5wF66YwX8',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'KD0DvRupJLw': {
+      id: 'KD0DvRupJLw',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'V355yU_xWxA': {
+      id: 'V355yU_xWxA',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'jswEi3bdgqQ': {
+      id: 'jswEi3bdgqQ',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'kVXW8vmPYPE': {
+      id: 'kVXW8vmPYPE',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'Q3O7wA5jW6c': {
+      id: 'Q3O7wA5jW6c',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'FvWK840uzV0': {
+      id: 'FvWK840uzV0',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    '1kdXcBUsQV8': {
+      id: '1kdXcBUsQV8',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    '2Ae1FuweYcc': {
+      id: '2Ae1FuweYcc',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'NVxIimxOUE0': {
+      id: 'NVxIimxOUE0',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'MwyrpWfSRoc': {
+      id: 'MwyrpWfSRoc',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'JXBdQ_X6kPg': {
+      id: 'JXBdQ_X6kPg',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'gjy8p-Rc-6k': {
+      id: '-Rc',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'zrpFUBffsDU': {
+      id: 'zrpFUBffsDU',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'shEJn9GWNpk': {
+      id: 'shEJn9GWNpk',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    '0kM4IB7swnA': {
+      id: '0kM4IB7swnA',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'Fw-ugyUqfPk': {
+      id: 'ugyUqfPk',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
+    'Ia0mBZaVoSg': {
+      id: 'Ia0mBZaVoSg',
+      name: 'Test video name',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Test video description'
+    },
   },
-  ids: ['-h0h1CydP6o', '0d3FHa4YTsE']
+  ids: [
+    'jUoDe7MhLBA',
+    '72phpntWYlU',
+    'toC9UqVnz8g',
+    '-h0h1CydP6o',
+    '4Ul1dme6f0A',
+    'nT1NjeBsZHs',
+    'nABNYwsDEqw',
+    'dx5wF66YwX8',
+    'KD0DvRupJLw',
+    'V355yU_xWxA',
+    'jswEi3bdgqQ',
+    'kVXW8vmPYPE',
+    'Q3O7wA5jW6c',
+    'FvWK840uzV0',
+    '1kdXcBUsQV8',
+    '2Ae1FuweYcc',
+    'NVxIimxOUE0',
+    'MwyrpWfSRoc',
+    'JXBdQ_X6kPg',
+    'gjy8p-Rc-6k',
+    'zrpFUBffsDU',
+    'shEJn9GWNpk',
+    '0kM4IB7swnA',
+    'Fw-ugyUqfPk',
+    'Ia0mBZaVoSg'
+  ]
 }
 
 let modalOpen = false;
@@ -203,6 +391,9 @@ class App extends Component {
                   <NavLink to='/' exact activeClassName='activeLink'>Home</NavLink>
                 </li>
                 <li>
+                  <NavLink to='/catalog' activeClassName='activeLink'>Catalog</NavLink>
+                </li>
+                <li>
                   <NavLink to='/channels' activeClassName='activeLink'>Channels</NavLink>
                 </li>
                 <li>
@@ -212,6 +403,15 @@ class App extends Component {
             </nav>
           </div>
           <Route path='/' exact component={Homepage} />
+          <Route path='/catalog' render={renderProps =>
+            <Catalog
+              {...renderProps}
+              channels={this.state.channels}
+              playlists={this.state.playlists}
+              videos={this.state.videos}
+              setModalOpenState={this.setModalOpenState}
+            />
+          } />
           <Route path='/channels' render={renderProps =>
             <Channels
               {...renderProps}

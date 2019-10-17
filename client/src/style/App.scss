@@ -167,4 +167,14 @@
       }
     }
   }
+
+  .catalog {
+    display: flex;
+    flex-direction: column;
+
+    .catalog-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
