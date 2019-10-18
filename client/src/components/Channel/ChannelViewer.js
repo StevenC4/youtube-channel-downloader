@@ -5,6 +5,7 @@ const ChannelViewer = props => {
     return (
         <div>
             <h2>{props.channel.name}</h2>
+            <p>{props.channel.description}</p>
             <h3>Playlists:</h3>
             {props.channel.playlistIds.map(playlistId =>
                 <PlaylistViewer

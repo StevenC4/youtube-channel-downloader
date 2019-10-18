@@ -16,19 +16,25 @@ const channels = {
       ytChannelId: 'UCOKHwx1VCdgnxwbjyb9Iu1g',
       name: 'Blender Guru',
       published: 1260360402,
-      playlistIds: []
+      playlistIds: [
+        'PLjEaoINr3zgEq0u2MzVgAaHEBt--xLB6U'
+      ]
     },
     'UCYJdpnjuSWVOLgGT9fIzL0g': {
       ytChannelId: 'UCYJdpnjuSWVOLgGT9fIzL0g',
       name: `Jelle's Marble Runs`,
       published: 1542746295,
-      playlistIds: []
+      playlistIds: [
+        'PLSmWeUDtr9fDKXL0UDaCEFxkb9fbQEOZH'
+      ]
     },
     'UCAL3JXZSzSm8AlZyD3nQdBA': {
       ytChannelId: 'UCAL3JXZSzSm8AlZyD3nQdBA',
       name: 'Primitive Technology',
       published: 1430523346,
-      playlistIds: []
+      playlistIds: [
+        'PLGnWLXjIDnpBVRqu5lz5JGaQxjPs7q3CJ'
+      ]
     },
     'UCudx6plmpbs5WtWvsvu-EdQ': {
       ytChannelId: 'UCudx6plmpbs5WtWvsvu-EdQ',
@@ -129,6 +135,36 @@ const playlists = {
         '-h0h1CydP6o'
        ]
     },
+    'PLjEaoINr3zgEq0u2MzVgAaHEBt--xLB6U': {
+      ytPlaylistId: 'PLjEaoINr3zgEq0u2MzVgAaHEBt--xLB6U',
+      published: '2019-10-18T04:12:00.000Z',
+      ytChannelId: 'UCOKHwx1VCdgnxwbjyb9Iu1g',
+      title: 'Blender 2.8 Beginner Tutorial Series',
+      description: 'The new Blender Donut tutorial, completely remade for Blender 2.8',
+      videoIds: [
+        'TPrnSACiTJ4',
+      ]
+    },
+    'PLSmWeUDtr9fDKXL0UDaCEFxkb9fbQEOZH': {
+      ytPlaylistId: 'PLSmWeUDtr9fDKXL0UDaCEFxkb9fbQEOZH',
+      published: '2019-01-01T12:23:41.000Z',
+      ytChannelId: 'UCYJdpnjuSWVOLgGT9fIzL0g',
+      title: 'MarbleLympics 2019',
+      description: 'All the videos of the Marble Olympic Games of 2019!',
+      videoIds: [
+        'O2AbcCbyJ2U'
+      ]
+    },
+    'PLGnWLXjIDnpBVRqu5lz5JGaQxjPs7q3CJ': {
+      ytPlaylistId: 'PLGnWLXjIDnpBVRqu5lz5JGaQxjPs7q3CJ',
+      published: '2019-04-03T20:12:54',
+      ytChannelId: 'UCAL3JXZSzSm8AlZyD3nQdBA',
+      title: 'Pyrotechnology | Primitive Technology',
+      description: 'Collection of all Primitive Technology videos focused on utilizing natural pyrotechnology in the wild, including using pyrotechnology to build a natural Tiled Rooft Hut, a natural Forge Blower, a natural Cord Drill and Pump Drill, and more.',
+      videoIds: [
+        'U7nqBgklf9E'
+      ]
+    }
   },
   ids: [
     'PLKb_pMSfR7rULeeQwbxrmMZyocJLhTcTI',
@@ -136,7 +172,10 @@ const playlists = {
     'PLKb_pMSfR7rX9Fy2Nh5dRWWRcRqfWn5QH',
     'PLKb_pMSfR7rWvmcmhEUvV841U_yM7I3Sp',
     'PLKb_pMSfR7rXbXQGinFS3JMt_JnQTOlWw',
-    'PLKb_pMSfR7rVB2MoOd4F3uHrtXuYPSsV4'
+    'PLKb_pMSfR7rVB2MoOd4F3uHrtXuYPSsV4',
+    'PLjEaoINr3zgEq0u2MzVgAaHEBt--xLB6U',
+    'PLSmWeUDtr9fDKXL0UDaCEFxkb9fbQEOZH',
+    'PLGnWLXjIDnpBVRqu5lz5JGaQxjPs7q3CJ'
   ]
 };
 
@@ -151,172 +190,193 @@ const videos = {
     },
     'jUoDe7MhLBA': {
       id: 'jUoDe7MhLBA',
-      name: 'Test video name',
+      name: 'What does the Master Cycle Zero do in Breath of the Wild?',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     '72phpntWYlU': {
       id: '72phpntWYlU',
-      name: 'Test video name',
+      name: '5 Breath of the Wild Easter Eggs/References',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'toC9UqVnz8g': {
       id: 'toC9UqVnz8g',
-      name: 'Test video name',
+      name: 'Why Link is TERRIFYING in Breath of the Wild!',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     '4Ul1dme6f0A': {
       id: '4Ul1dme6f0A',
-      name: 'Test video name',
+      name: 'Twilight Princess HD Review/Unboxing - Zeltik Review',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'nT1NjeBsZHs': {
       id: 'nT1NjeBsZHs',
-      name: 'Test video name',
+      name: 'Zelda: Breath of the Wild - Zeltik Review',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'nABNYwsDEqw': {
       id: 'nABNYwsDEqw',
-      name: 'Test video name',
+      name: 'Is Mario Kart 8 Deluxe Worth It? - Zeltik Review',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'dx5wF66YwX8': {
       id: 'dx5wF66YwX8',
-      name: 'Test video name',
+      name: 'Super Mario Odyssey, the best 3D Mario? - Zeltik Review (No Spoilers)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'KD0DvRupJLw': {
       id: 'KD0DvRupJLw',
-      name: 'Test video name',
+      name: 'Zelda: Twilight Princess’ most POINTLESS Item - Hyrule Highlights',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'V355yU_xWxA': {
       id: 'V355yU_xWxA',
-      name: 'Test video name',
+      name: 'Breath of the Wild’s Master Sword Clones (Link’s Legacy) - Hyrule Highlights',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'jswEi3bdgqQ': {
       id: 'jswEi3bdgqQ',
-      name: 'Test video name',
+      name: '3 SECRET ways to beat Zelda Bosses! - Hyrule Highlights',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'kVXW8vmPYPE': {
       id: 'kVXW8vmPYPE',
-      name: 'Test video name',
+      name: 'Ocarina of Time’s IMPOSSIBLE Heart Piece - Hyrule Highlights',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'Q3O7wA5jW6c': {
       id: 'Q3O7wA5jW6c',
-      name: 'Test video name',
+      name: 'Getting Ocarina of Time’s Impossible Heart Piece in the 3DS Version! - Hyrule Highlights Revisited',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'FvWK840uzV0': {
       id: 'FvWK840uzV0',
-      name: 'Test video name',
+      name: 'Top 5 Zelda Final Bosses!',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     '1kdXcBUsQV8': {
       id: '1kdXcBUsQV8',
-      name: 'Test video name',
+      name: '5 Awesome CUT Content/Unused Ideas from Zelda Games!',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     '2Ae1FuweYcc': {
       id: '2Ae1FuweYcc',
-      name: 'Test video name',
+      name: 'Top 10 Darkest / Scariest Things in Zelda',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'NVxIimxOUE0': {
       id: 'NVxIimxOUE0',
-      name: 'Test video name',
+      name: 'Top 5 RIDICULOUSLY Powerful Zelda Items! (ft. ZeldaMaster)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'MwyrpWfSRoc': {
       id: 'MwyrpWfSRoc',
-      name: 'Test video name',
+      name: 'Top 5 Zelda Bosses - Zeltik',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'JXBdQ_X6kPg': {
       id: 'JXBdQ_X6kPg',
-      name: 'Test video name',
+      name: 'The Day Link Died - Links to the Past (Zelda Lore)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'gjy8p-Rc-6k': {
       id: '-Rc',
-      name: 'Test video name',
+      name: 'The Day Hyrule Fell - Links to the Past (Zelda Lore)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'zrpFUBffsDU': {
       id: 'zrpFUBffsDU',
-      name: 'Test video name',
+      name: 'The Miracle at Fort Hateno - Links to the Past (Zelda Lore)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'shEJn9GWNpk': {
       id: 'shEJn9GWNpk',
-      name: 'Test video name',
+      name: 'Hyrule’s Divine Intervention - Links to the Past (Zelda Lore)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     '0kM4IB7swnA': {
       id: '0kM4IB7swnA',
-      name: 'Test video name',
+      name: 'Which Link is strongest? (Ranking the Links from Legend of Zelda)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'Fw-ugyUqfPk': {
       id: 'ugyUqfPk',
-      name: 'Test video name',
+      name: 'Which Cucco is the DEADLIEST in Zelda games? (Ranking the Cuccos from Legend of Zelda)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
     'Ia0mBZaVoSg': {
       id: 'Ia0mBZaVoSg',
-      name: 'Test video name',
+      name: 'Which Ganondorf is strongest? (Ranking the Ganons from Legend of Zelda)',
       published: 1561921200,
       thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
       description: 'Test video description'
     },
+    'TPrnSACiTJ4': {
+      id: 'TPrnSACiTJ4',
+      name: 'Beginning Blender Tutorial - Part 1',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Blender tutorial for beginners! The long awaited reboot of the popular donut tutorial, completely remade for Blender 2.8. New videos will be uploaded every other day to this channel.'
+    },
+    'O2AbcCbyJ2U': {
+      id: 'O2AbcCbyJ2U',
+      name: 'Marble Race: Marble League 2019 Qualifiers',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'The Qualification round of the Marble League 2019 (former MarbleLympics), 20 teams with 5 marbles each will compete for 12 qualification spots for the Marble League 2019.'
+    },
+    'U7nqBgklf9E': {
+      id: 'U7nqBgklf9E',
+      name: 'Primitive Technology: Pit and chimney furnace',
+      published: 1561921200,
+      thumbnail: 'https://i1.ytimg.com/vi/od3FHa4YTsE/hqdefault.jpg',
+      description: 'Primitive Technology: Pit and chimney furnace - Creating a pit and chimney furnace from scratch.'
+    }
   },
   ids: [
     'jUoDe7MhLBA',
@@ -343,7 +403,10 @@ const videos = {
     'shEJn9GWNpk',
     '0kM4IB7swnA',
     'Fw-ugyUqfPk',
-    'Ia0mBZaVoSg'
+    'Ia0mBZaVoSg',
+    'TPrnSACiTJ4',
+    'O2AbcCbyJ2U',
+    'U7nqBgklf9E'
   ]
 }
 

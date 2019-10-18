@@ -167,14 +167,28 @@
       }
     }
   }
+}
 
-  .catalog {
+.catalog {
+  display: flex;
+  flex-direction: column;
+  text-align: left!important;
+  margin: 32px;
+
+  .catalog-list {
     display: flex;
     flex-direction: column;
+    
+    .channel {
+      &:first-of-type {
+        border-top: 1px solid gray;
+      }
+      border-bottom: 1px solid gray;
+    }
 
-    .catalog-list {
-      display: flex;
-      flex-direction: column;
+    .channel-playlist-list,
+    .playlist-video-list {
+      margin-left: 8px;
     }
   }
 }
